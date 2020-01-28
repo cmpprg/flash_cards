@@ -1,9 +1,9 @@
 require "minitest/autorun"
 require "minitest/pride"
-require_relative "./lib/turn.rb"
-require_realtive "./lib/card.rb"
+require_relative "../lib/turn.rb"
+require_relative "../lib/card.rb"
 
-class TestTurn < Minitest::TestTurn
+class TestTurn < Minitest::Test
 
   def test_that_object_exists
     turn = Turn.new
