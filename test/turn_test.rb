@@ -52,6 +52,6 @@ class TestTurn < Minitest::Test
     card2 = Card.new("Which planet is closest to the sun?", "Mercury", :STEM)
     turn2 = Turn.new("Saturn", card)
 
-    assert_equal "Incorrect!", turn.feedback
+    assert_equal "Incorrect!", turn2.feedback
   end
 end
