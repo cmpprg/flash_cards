@@ -6,12 +6,12 @@ require_relative "../lib/card.rb"
 class TestTurn < Minitest::Test
 
   def test_that_object_exists
-    turn = Turn.new
+    turn = Turn.new("Juneau", card)
     assert_instance_of Turn, turn
   end
 
   def test_that_it_accepts_arguments
-    skip
+    # skip
     card = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     turn = Turn.new("Juneau", card)
 
