@@ -9,6 +9,13 @@ class Turn
   end
 
   def correct?
+    return self.correct = true if guess.downcase == card.answer.downcase
     correct
   end
+
+  def feedback
+    return "Correct!" if correct? == true
+    "Incorrect!"
+  end
+
 end
