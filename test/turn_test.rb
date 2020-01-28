@@ -7,7 +7,7 @@ class TestTurn < Minitest::Test
 
   def test_that_object_exists
     turn = Turn.new
-    assert_instance_of Card, card
+    assert_instance_of Turn, turn
   end
 
   def test_that_it_accepts_arguments
