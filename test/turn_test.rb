@@ -6,6 +6,7 @@ require_relative "../lib/card.rb"
 class TestTurn < Minitest::Test
 
   def test_that_object_exists
+    card = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     turn = Turn.new("Juneau", card)
     assert_instance_of Turn, turn
   end
