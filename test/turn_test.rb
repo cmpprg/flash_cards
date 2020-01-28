@@ -11,6 +11,7 @@ class TestTurn < Minitest::Test
   end
 
   def test_that_it_accepts_arguments
+    skip
     card = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     turn = Turn.new("Juneau", card)
 
@@ -19,6 +20,7 @@ class TestTurn < Minitest::Test
   end
 
   def test_that_correct_variable_defaults_to_false
+    skip
     card = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     turn = Turn.new("Juneau", card)
 
@@ -26,6 +28,7 @@ class TestTurn < Minitest::Test
   end
 
   def test_that_it_tracks_correct_and_incorrect_answers
+    skip
     card = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     turn = Turn.new("Juneau", card)
 
@@ -38,6 +41,7 @@ class TestTurn < Minitest::Test
   end
 
   def test_that_it_can_provide_feedback_for_correct_or_incorrect_answers
+    skip
     card = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     turn = Turn.new("Juneau", card)
 
