@@ -25,32 +25,33 @@ class TestTurn < Minitest::Test
     card = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     turn = Turn.new("Juneau", card)
 
-    assert_equal false, turn.correct?
+    assert_equal false, turn.correct
   end
 
   def test_that_it_tracks_correct_and_incorrect_answers
-    skip
+    # skip
     card = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     turn = Turn.new("Juneau", card)
 
     assert turn.correct?
 
     card2 = Card.new("Which planet is closest to the sun?", "Mercury", :STEM)
-    turn2 = Turn.new("Saturn", card)
+    turn2 = Turn.new("Saturn", card2)
 
-    assert_equal false, turn.correct?
+    assert_equal false, turn2.correct?
+
   end
 
   def test_that_it_can_provide_feedback_for_correct_or_incorrect_answers
-    skip
+
     card = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     turn = Turn.new("Juneau", card)
 
-    assert_equal "Correct!"
+    assert_equal "Correct!", turn.feedback
 
     card2 = Card.new("Which planet is closest to the sun?", "Mercury", :STEM)
     turn2 = Turn.new("Saturn", card)
 
-    assert_equal "Incorrect!"
+    assert_equal "Incorrect!", turn.feedback
   end
 end
