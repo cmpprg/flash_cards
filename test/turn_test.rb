@@ -1,5 +1,5 @@
-require minitest/autorun
-require minitest/pride
+require "minitest/autorun"
+require "minitest/pride"
 require_relative "./lib/turn.rb"
 require_realtive "./lib/card.rb"
 
