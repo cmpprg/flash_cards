@@ -1,6 +1,6 @@
 class Turn
-  
-  def initialize
+
+  def initialize guess, card
 
   end
 end
