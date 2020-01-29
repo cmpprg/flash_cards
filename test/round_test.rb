@@ -37,16 +37,18 @@ class TestRound < Minitest::Test
     assert_equal [], round.turns
   end
 
+  def test_current_card_returns_1st_card_in_deck
+    card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
+    card2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
+    card3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
+    deck = [card1, card2, card3]
+    round = Round.new(deck)
+
+    assert_equal card1, round.current_card
+  end
+
 end
 
-
-# pry(main)> round.turns
-# #=> []
-#
-#
-# pry(main)> round.current_card
-# #=> #<Card:0x00007fa16104e160 @answer="Juneau", @question="What is the capital of Alaska?", @category=:Geography>
-#
 # pry(main)> new_turn = round.take_turn("Juneau")
 # #=> #<Turn:0x00007f99842f09e8 @card=#<Card:0x00007f800e29f0c9 @question=""What is the capital of Alaska?", @answer="Juneau", @category=:Geography>, @guess="Juneau">
 #
