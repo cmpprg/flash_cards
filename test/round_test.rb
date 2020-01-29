@@ -47,17 +47,20 @@ class TestRound < Minitest::Test
     assert_equal card1, round.current_card
   end
 
+  def test_take_turn_creates_instance_of_turn_with_all_functionality
+    card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
+    card2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
+    card3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
+    deck = [card1, card2, card3]
+    round = Round.new(deck)
+    new_turn = round.take_turn("Juneau")
+
+    assert_equal Turn, new_turn.class
+    assert_equal true, new_turn.correct?
+    assert_equal card1, new_turn.card
+  end
 end
 
-# pry(main)> new_turn = round.take_turn("Juneau")
-# #=> #<Turn:0x00007f99842f09e8 @card=#<Card:0x00007f800e29f0c9 @question=""What is the capital of Alaska?", @answer="Juneau", @category=:Geography>, @guess="Juneau">
-#
-# pry(main)> new_turn.class
-# #=> Turn
-#
-# pry(main)> new_turn.correct?
-# #=> true
-#
 # pry(main)> round.turns
 # #=> [#<Turn:0x00007f99842f09e8 @card=#<Card:0x00007f800e29f0c9 @question=""What is the capital of Alaska?", @answer="Juneau", @category=:Geography>, @guess="Juneau">]
 #
