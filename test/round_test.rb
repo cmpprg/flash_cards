@@ -14,7 +14,7 @@ class TestRound < Minitest::Test
     deck = [card1, card2, card3]
     round = Round.new(deck)
 
-    assert_existence_of Round, round
+    assert_instance_of Round, round
   end
 
 end
