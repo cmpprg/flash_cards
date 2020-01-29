@@ -7,19 +7,18 @@ require "./lib/round"
 
 class TestRound < Minitest::Test
 
+  def test_if_it_exists
+    card_1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
+    card_2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
+    card_3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
+    deck = [card1, card2, card3]
+    round = Round.new(deck)
+
+    assert_existence_of Card, card
+  end
+
 end
-# pry(main)> require './lib/card'
-# #=> true
-#
-# pry(main)> require './lib/turn'
-# #=> true
-#
-# pry(main)> require './lib/deck'
-# #=> true
-#
-# pry(main)> require './lib/round'
-# #=> true
-#
+
 # pry(main)> card_1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
 # #=> #<Card:0x00007fa16104e160 @answer="Juneau", @question="What is the capital of Alaska?", @category=:Geography>
 #
