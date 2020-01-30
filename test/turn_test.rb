@@ -17,7 +17,6 @@ class TestTurn < Minitest::Test
     turn = Turn.new("Juneau", card)
 
     assert_equal "Juneau", turn.guess
-    assert_equal "Juneau", turn.card.answer
   end
 
   def test_that_correct_method_can_verify_correct_and_incorrect_guesses
