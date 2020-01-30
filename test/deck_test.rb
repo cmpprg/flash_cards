@@ -7,14 +7,14 @@ class TestDeck < Minitest::Test
 
   def test_that_object_is_instance_of_deck_class
 
-    deck = Deck.new()
+    deck = Deck.new
 
     assert_instance_of Deck, deck
   end
 
   def test_that_cards_attribute_starts_empty
 
-    deck = Deck.new()
+    deck = Deck.new
 
     assert_equal [], deck.cards
   end
