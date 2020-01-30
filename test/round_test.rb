@@ -59,6 +59,20 @@ class TestRound < Minitest::Test
     assert_equal true, new_turn.correct?
     assert_equal card1, new_turn.card
   end
+
+  def test_that_take_turn_adds_turn_objects_to_turns
+    card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
+    card2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
+    card3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
+    deck = [card1, card2, card3]
+    round = Round.new(deck)
+    new_turn = round.take_turn("Juneau")
+
+    assert_includes round.turns, new_turn
+    assert_equal new_turn, round.turns[0]
+
+
+  end
 end
 
 # pry(main)> round.turns
