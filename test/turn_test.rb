@@ -20,15 +20,7 @@ class TestTurn < Minitest::Test
     assert_equal "Juneau", turn.card.answer
   end
 
-  def test_that_correct_variable_defaults_to_false
-    # skip
-    card = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
-    turn = Turn.new("Juneau", card)
-
-    assert_equal false, turn.correct
-  end
-
-  def test_that_it_tracks_correct_and_incorrect_answers
+  def test_that_correct_method_can_verify_correct_and_incorrect_guesses
     # skip
     card = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     turn = Turn.new("Juneau", card)
