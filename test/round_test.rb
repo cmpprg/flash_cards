@@ -121,17 +121,20 @@ class TestRound < Minitest::Test
     assert_equal 0, round.number_correct_by_category(:STEM)
   end
 
+  def test_percent_correct_method
+    card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
+    card2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
+    card3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
+    deck = [card1, card2, card3]
+    round = Round.new(deck)
+    round.take_turn("Juneau")
+    round.take_turn("Venus")
+
+    assert_equal 50.0, round.percent_correct
+  end
+
 end
 
-# pry(main)> round.number_correct_by_category(:Geography)
-# #=> 1
-#
-# pry(main)> round.number_correct_by_category(:STEM)
-# #=> 0
-#
-# pry(main)> round.percent_correct
-# #=> 50.0
-#
 # pry(main)> round.percent_correct_by_category(:Geography)
 # #=> 100.0
 #
