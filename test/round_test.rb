@@ -11,7 +11,7 @@ class TestRound < Minitest::Test
     card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     card2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
     card3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
-    deck = [card1, card2, card3]
+    deck = Deck.new([card1, card2, card3])
     round = Round.new(deck)
 
     assert_instance_of Round, round
@@ -21,7 +21,7 @@ class TestRound < Minitest::Test
     card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     card2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
     card3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
-    deck = [card1, card2, card3]
+    deck = Deck.new([card1, card2, card3])
     round = Round.new(deck)
 
     assert_equal deck, round.deck
@@ -31,7 +31,7 @@ class TestRound < Minitest::Test
     card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     card2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
     card3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
-    deck = [card1, card2, card3]
+    deck = Deck.new([card1, card2, card3])
     round = Round.new(deck)
 
     assert_equal [], round.turns
@@ -41,7 +41,7 @@ class TestRound < Minitest::Test
     card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     card2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
     card3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
-    deck = [card1, card2, card3]
+    deck = Deck.new([card1, card2, card3])
     round = Round.new(deck)
 
     assert_equal card1, round.current_card
@@ -51,7 +51,7 @@ class TestRound < Minitest::Test
     card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     card2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
     card3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
-    deck = [card1, card2, card3]
+    deck = Deck.new([card1, card2, card3])
     round = Round.new(deck)
     new_turn = round.take_turn("Juneau")
 
@@ -64,7 +64,7 @@ class TestRound < Minitest::Test
     card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     card2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
     card3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
-    deck = [card1, card2, card3]
+    deck = Deck.new([card1, card2, card3])
     round = Round.new(deck)
     new_turn = round.take_turn("Juneau")
 
@@ -76,7 +76,7 @@ class TestRound < Minitest::Test
     card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     card2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
     card3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
-    deck = [card1, card2, card3]
+    deck = Deck.new([card1, card2, card3])
     round = Round.new(deck)
     new_turn = round.take_turn("Juneau")
 
@@ -87,7 +87,7 @@ class TestRound < Minitest::Test
     card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     card2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
     card3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
-    deck = [card1, card2, card3]
+    deck = Deck.new([card1, card2, card3])
     round = Round.new(deck)
     new_turn = round.take_turn("Juneau")
 
@@ -98,7 +98,7 @@ class TestRound < Minitest::Test
     card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     card2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
     card3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
-    deck = [card1, card2, card3]
+    deck = Deck.new([card1, card2, card3])
     round = Round.new(deck)
     new_turn = round.take_turn("Juneau")
     next_turn = round.take_turn("Venus")
@@ -112,7 +112,7 @@ class TestRound < Minitest::Test
     card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     card2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
     card3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
-    deck = [card1, card2, card3]
+    deck = Deck.new([card1, card2, card3])
     round = Round.new(deck)
     round.take_turn("Juneau")
     round.take_turn("Venus")
@@ -125,12 +125,28 @@ class TestRound < Minitest::Test
     card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     card2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
     card3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
-    deck = [card1, card2, card3]
+    deck = Deck.new([card1, card2, card3])
     round = Round.new(deck)
     round.take_turn("Juneau")
     round.take_turn("Venus")
 
     assert_equal 50.0, round.percent_correct
+  end
+
+  def test_percent_correct_by_category_method
+    card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
+    card2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
+    card3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
+    card4 = Card.new("Something?", "Answer", :STEM)
+    deck = Deck.new([card1, card2, card3, card4])
+    round = Round.new(deck)
+    round.take_turn("Juneau")
+    round.take_turn("Venus")
+    round.take_turn("North north west")
+    round.take_turn("Answer")
+
+    assert_equal 100.0, round.percent_correct_by_category(:Geography)
+    assert_equal 66.7, round.percent_correct_by_category(:STEM)
   end
 
 end
