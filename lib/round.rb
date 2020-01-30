@@ -19,4 +19,11 @@ class Round
     @deck.shift
     turn
   end
+
+  def number_correct_by_category(category)
+    correct_from_category = turns.select do |turn|
+      turn.card.category == category && turn.correct?
+    end
+    correct_from_category.length
+  end
 end
