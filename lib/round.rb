@@ -26,4 +26,8 @@ class Round
     end
     correct_from_category.length
   end
+
+  def percent_correct
+    @number_correct * 100.0 / turns.length
+  end
 end
