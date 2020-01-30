@@ -108,20 +108,21 @@ class TestRound < Minitest::Test
     assert_equal 1, round.number_correct
   end
 
+  def test_number_correct_by_category_method
+    card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
+    card2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
+    card3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
+    deck = [card1, card2, card3]
+    round = Round.new(deck)
+    round.take_turn("Juneau")
+    round.take_turn("Venus")
+
+    assert_equal 1, round.number_correct_by_category(:Geography)
+    assert_equal 0, round.number_correct_by_category(:STEM)
+  end
+
 end
 
-# pry(main)> round.take_turn("Venus")
-# #=> #<Turn:0x00007f972a215b38...>
-#
-# pry(main)> round.turns.count
-# #=> 2
-#
-# pry(main)> round.turns.last.feedback
-# #=> "Incorrect."
-#
-# pry(main)> round.number_correct
-# #=> 1
-#
 # pry(main)> round.number_correct_by_category(:Geography)
 # #=> 1
 #
