@@ -16,6 +16,7 @@ class Round
     turn = Turn.new(guess, current_card())
     @turns << turn
     @number_correct += 1 if turn.correct? == true
+    @deck.shift
     turn
   end
 end
