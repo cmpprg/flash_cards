@@ -38,4 +38,25 @@ class Round
     percent.round(1)
   end
 
+  def start
+    total_cards = @deck.cards.length
+    puts "Welcome! You're playing with #{total_cards} cards."
+    puts "-" * 40
+    until @deck.cards.length == 0
+      puts "This is card number #{@turns.length + 1} out of #{total_cards}"
+      puts "Question: #{current_card.question}"
+      guess = $stdin.gets.chomp
+      take_turn(guess)
+      puts @turns.last.feedback
+    end
+    puts "******Game Over!******"
+    puts "You had #{@number_correct} correct guesses out of #{total_cards} for a total score of #{percent_correct}%"
+    until turns.length == 0
+      current_turn_category = turns.first.card.category
+      puts "#{current_turn_category} - #{percent_correct_by_category(current_turn_category)}% Correct"
+      @turns.delete_if do |turn|
+        turn.card.category == current_turn_category
+      end
+    end
+  end
 end
