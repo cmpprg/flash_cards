@@ -14,4 +14,9 @@ class CardGeneratorTest < Minitest::Test
   def test_it_exists
     assert_instance_of CardGenerator, @generator
   end
+
+  def test_instance_variables
+    assert_equal @filename, @generator.filename
+    assert_equal [], @generator.cards
+  end
 end
