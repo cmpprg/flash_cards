@@ -8,7 +8,7 @@ class CardGeneratorTest < Minitest::Test
 
   def setup
     @blank_file = "./data/blank.txt"
-    @cards_file = "./data/cards.txt"
+    @cards_file = "./data/test_cards.txt"
   end
 
   def test_it_exists
