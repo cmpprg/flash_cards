@@ -19,4 +19,12 @@ class CardGeneratorTest < Minitest::Test
     assert_equal @filename, @generator.filename
     assert_equal [], @generator.cards
   end
+
+  def test_generate_cards_method
+    @generator.generate_cards
+    assert_equal 3, @generator.cards.length
+    assert_instance_of Card, @generator.cards[2]
+  end
+
+
 end
