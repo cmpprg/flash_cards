@@ -1,4 +1,14 @@
 What method removes white space from both sides of a string?, strip, String Methods
-What enumerable will transform each element and return a new array of the same length?, map, Enumerable
 What method randomizes the order of an array and returns the new array?,   shuffle, Array Methods
 What method gives you the element found at [-1] in an array?, last, Array Methods
+What method allows you to perform an action upon (or not) each element of an array and then add them all together?, sum, Array Methods
+What method acts upon an array taking a separator as an argument and returns a string of all elements in that array?, join, Array Methods
+What method is often referred to as a shovel?, <<, General Methods
+What method will remove the last element in an array and return its value?, pop, Array Methods
+What method will remove the first element in an array and return its value?, shift, Array Methods
+What enumerable will return true if the block you give never returns false or nil?, all?, Enumerable
+What enumerable will return true if the block you give ever returns false or nil?, any?, Enumerable
+What enumerable will transform each element and return a new array of the same length?, map, Enumerable
+What enumerable will return the first element for which the block does not return false?, find, Enumerable
+What enumerable will return an array of all elements for which the bock returns true? find_all, Enumerable
+What enumerable will always return the original array and can be used to accomplish the goal of any other enumerable?, each, Enumerable
