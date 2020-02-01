@@ -16,7 +16,7 @@ class TestDeck < Minitest::Test
 
     deck = Deck.new
 
-    assert_equal [], deck.cards
+    assert deck.empty?
   end
 
   def test_cards_can_holds_card_objects
