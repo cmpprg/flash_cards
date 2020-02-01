@@ -1,0 +1,3 @@
+What method removes white space from both sides of a string?, strip, String Methods
+What enumerable will transform each element and return a new array of the same length?, map, Enumerable
+What method randomizes the order of an array and returns the new array?,   shuffle, Array Methods
