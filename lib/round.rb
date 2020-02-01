@@ -39,6 +39,7 @@ class Round
   end
 
   def start
+    @deck.cards.shuffle!
     total_cards = @deck.cards.length
     puts "Welcome! You're playing with #{total_cards} cards."
     puts "-" * 40
